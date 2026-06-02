@@ -10,7 +10,7 @@ export default function Contato() {
                 <form className="contact-form" action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST">
                     <input type="text" name="name" placeholder="O Seu Nome Completo" required />
                     <input type="email" name="email" placeholder="O Seu E-mail Institucional" required />
-                    <textarea name="message" placeholder="Como é que o CA-SI o pode ajudar?" rows={5} required></textarea>
+                    <textarea name="message" placeholder="Como é que o CA-SI pode te ajudar?" rows={5} required></textarea>
                     <button type="submit" className="btn">Enviar Mensagem</button>
                 </form>
                 
