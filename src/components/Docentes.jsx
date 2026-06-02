@@ -18,8 +18,8 @@ export default function Docentes() {
         <div className="contact-grid">
           <div className="contact-card">
             <h3>Coordenação</h3>
-            <p><strong>Coordenador:</strong> Prof. DSc. Marcelo Otone Aguiar</p>
-            <p><strong>E-mail:</strong> marcelo.aguiar@ufes.br</p>
+            <p><strong>Coordenador:</strong> Prof. MSc. Giuliano Prado de Morais Giglio</p>
+            <p><strong>E-mail:</strong> giucontato@gmail.com</p>
             <p><strong>Sub-coordenador:</strong> Prof. DSc. Helder de Amorim Mendes</p>
             <p><strong>E-mail:</strong> helder.mendes@ufes.br</p>
           </div>
