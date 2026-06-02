@@ -1,0 +1,18 @@
+[
+  { "name": "Antonio Almeida de Barros Junior", "area": "Banco de Dados", "email": "antonio.barros@ufes.br", "site": "antoniojr.webnode.com.br" },
+  { "name": "Bruno Vilela Oliveira", "area": "Engenharia de Software", "email": "bruno.v.oliveira@ufes.br", "site": "brunovilela.webnode.com.br" },
+  { "name": "Clayton Vieira Fraga Filho", "area": "Engenharia de Software", "email": "clayton.fraga@ufes.br", "site": null },
+  { "name": "Dayan de Castro Bissoli", "area": "Sistemas de Informação", "email": "dayan.bissoli@ufes.br", "site": null },
+  { "name": "Edmar Hell Kampke", "area": "Teoria dos Grafos / Matemática", "email": "edmar.kampke@ufes.br", "site": null },
+  { "name": "Geraldo Regis Mauri", "area": "Pesquisa Operacional", "email": "geraldo.mauri@ufes.br", "site": "grmauri.pro.br" },
+  { "name": "Giuliano Prado de Morais Giglio", "area": "Desenvolvimento Web / Governança TI", "email": "giucontato@gmail.com", "site": "www.giuliano.tec.br" },
+  { "name": "Helder de Amorim Mendes", "area": "Redes e Computação Distribuída", "email": "helder.mendes@ufes.br", "site": null },
+  { "name": "Jacson Rodrigues Correia da Silva", "area": "Inteligência Artificial e Estrutura de Dados", "email": "jacson.silva@ufes.br", "site": "jeiks.net" },
+  { "name": "Juliana Pinheiro Campos Pirovani", "area": "Teoria da Computação", "email": "juliana.campos@ufes.br", "site": "jucampos.webnode.pt" },
+  { "name": "Larice Nogueira de Andrade", "area": "Informática Básica / Legislação", "email": "lariceandrade@gmail.com", "site": "http://lnandrade.webnode.com/" },
+  { "name": "Marcelo Otone Aguiar", "area": "Sistemas de Informação / Coordenação", "email": "marcelo.aguiar@ufes.br", "site": "marceloaguiar.pro.br" },
+  { "name": "Paulo Roberto Nunes de Souza", "area": "Teoria da Computação e Computação Forense", "email": "paulo.souza@ufes.br", "site": "paulonunes.online" },
+  { "name": "Rodrigo Freitas Silva", "area": "Redes de Computadores", "email": "rodrigo.f.silva@ufes.br", "site": null },
+  { "name": "Simone Dornelas Costa", "area": "Interação Humano-Computador e Ontologias", "email": "simone.costa@ufes.br", "site": null },
+  { "name": "Valéria Alves da Silva", "area": "Arquitetura de Computadores", "email": "valeria.silva@ufes.br", "site": null }
+]

@@ -1,0 +1,7 @@
+.schedule-wrapper { overflow-x: auto; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); }
+.schedule-table { width: 100%; border-collapse: collapse; text-align: left; }
+.schedule-table th, .schedule-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+.schedule-table thead { background-color: var(--primary-color); color: white; text-align: left; }
+.schedule-table td strong { font-size: 0.9rem; color: #1a202c; display: block; }
+.schedule-table td small { font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 2px; }
+.imgLab { display: block; width: 100%; max-width: 900px; height: auto; margin: 3rem auto 0; border-radius: 8px; box-shadow: var(--shadow-soft); }

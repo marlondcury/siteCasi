@@ -1,0 +1,99 @@
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Aumentei um pouco o espaço entre o form e as redes */
+  margin-top: 2rem;
+}
+
+/* --- ESTILIZAÇÃO DO FORMULÁRIO --- */
+.contact-form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg); /* Fundo branco para destacar o form */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1.25rem;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: var(--body-font);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #f8fafc; /* Fundo ligeiramente cinza nos inputs */
+  transition: var(--transition-fast);
+}
+
+/* Efeito ao clicar no campo de texto */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(77, 91, 206, 0.15); /* Brilho suave à volta */
+}
+
+/* Ajuste no botão de submissão para preencher a largura */
+.contact-form button[type="submit"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/* --- ESTILIZAÇÃO DAS INFORMAÇÕES (REDES) --- */
+.contact-info {
+  flex: 1;
+  padding: 1rem 0; /* Alinhamento vertical com o form */
+}
+
+.contact-info h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.contact-info h3:first-child {
+  margin-top: 0;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition-fast);
+  padding: 8px 12px; /* Área de clique maior */
+  border-radius: 8px; /* Cantos arredondados no hover */
+}
+
+.social-link svg {
+  color: var(--primary-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--primary-color);
+  background-color: #f1f5f9; /* Fundo suave ao passar o rato */
+}
+
+.social-link:hover svg {
+  transform: translateY(-3px);
+}
+
+/* Responsividade para ecrãs maiores */
+@media(min-width: 768px) {
+  .contact-wrapper {
+    flex-direction: row;
+    align-items: stretch; /* Garante que o form e as redes ficam lado a lado harmoniosamente */
+  }
+}

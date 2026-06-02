@@ -1,0 +1,16 @@
+.accordion { max-width: 900px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); }
+.accordion-button { background-color: var(--card-bg); color: var(--text-main); cursor: pointer; padding: 18px 24px; width: 100%; text-align: left; border: 1px solid var(--border-color); border-bottom: none; outline: none; font-size: 1.05rem; font-weight: 600; transition: var(--transition-fast); position: relative; }
+.accordion-button:last-of-type { border-bottom: 1px solid var(--border-color); }
+.accordion-button:hover, .accordion-button.active { background-color: #f7fafc; color: var(--primary-color); }
+.accordion-button::after { content: '+'; font-size: 1.4rem; color: var(--primary-color); position: absolute; right: 24px; top: 50%; transform: translateY(-50%); transition: transform 0.3s ease; }
+.accordion-button.active::after { content: '−'; }
+.accordion-panel { padding: 0 24px; background-color: var(--card-bg); max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); }
+.accordion-button.active + .accordion-panel { border-bottom: 1px solid var(--border-color); }
+
+.subject-detail { padding: 1.25rem 0; border-bottom: 1px solid #edf2f7; transition: var(--transition-fast); }
+.subject-detail:last-child { border-bottom: none; }
+.subject-detail h4 { display: flex; justify-content: space-between; align-items: center; }
+
+/* Efeito visual no acordeão caso a matéria já esteja feita */
+.detail-concluido { border-left: 4px solid #48bb78; padding-left: 10px; background-color: #fcfdfd; }
+.badge-done { font-size: 0.8rem; color: #48bb78; font-weight: bold; background-color: #e6fffa; padding: 2px 8px; border-radius: 4px; }

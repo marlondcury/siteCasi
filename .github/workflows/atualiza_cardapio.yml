@@ -1,0 +1,36 @@
+name: Automação Semanal do Cardápio RU (Node.js)
+
+on:
+  schedule:
+    # Roda todas as segundas-feiras às 07:00 UTC (04:00 AM em Brasília)
+    - cron: '0 7 * * 1'
+  workflow_dispatch: 
+
+jobs:
+  scrape_and_update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Executar Motor de Raspagem
+        run: npm run scrape
+
+      - name: Commit e Push dos Dados
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add public/data/cardapio.json
+          git commit -m "chore(data): atualização automática do cardápio semanal [skip ci]" || echo "Nenhuma modificação detectada."
+          git push
