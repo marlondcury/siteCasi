@@ -32,9 +32,6 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
-      - name: Executar Motor de Raspagem (Scraper)
-        run: npm run scrape
-
       - name: Compilar o projeto React (Build)
         run: npm run build
 
