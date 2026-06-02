@@ -31,7 +31,7 @@ export default function About() {
           <div className="members-row">
             {members.map((member, i) => (
               <div className="member-card" key={i}>
-                <img src={`/assets/images/${member.img}`} alt={member.name} />
+                <img src={`./assets/images/${member.img}`} alt={member.name} />
                 <h4>{member.name}</h4>
                 <p>{member.role}</p>
               </div>
