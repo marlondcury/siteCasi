@@ -3,3 +3,4 @@
 .member-card img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-color); margin-bottom: 0.75rem; }
 .member-card h4 { font-size: 0.95rem; font-weight: 600; color: #1a202c; }
 .member-card p { font-size: 0.85rem; color: var(--text-muted); }
+.about-text{margin-bottom: 10px;}
