@@ -1,6 +1,50 @@
-.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-.menu-card { background: var(--card-bg); padding: 1.75rem; border: 1px solid var(--border-color); border-radius: 10px; box-shadow: var(--shadow-soft); }
-.menu-card h3 { text-align: center; border-bottom: 2px solid var(--secondary-bg); padding-bottom: 10px; margin-bottom: 1.25rem; font-size: 1.25rem; }
-.menu-card p { padding: 8px 0; border-bottom: 1px solid #f7fafc; font-size: 0.9rem; color: #4a5568; }
-.menu-card p:last-child { border-bottom: none; }
-.menu-card p strong { color: #1a202c; }
+/* Container de Grid próprio do RU para evitar que a tela estoure */
+.ru-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 1.5rem; 
+  margin-bottom: 2.5rem; 
+  width: 100%;
+}
+
+.ru-card { 
+  background: var(--card-bg); 
+  padding: 1.5rem; 
+  border-radius: 10px; 
+  box-shadow: var(--shadow-soft); 
+  border: 1px solid var(--border-color); 
+}
+
+.ru-card h3 { 
+  margin-top: 0; 
+  margin-bottom: 1rem; 
+  font-size: 1.25rem; 
+  text-align: center;
+}
+
+.ru-card p { 
+  margin-bottom: 0.5rem; 
+  font-size: 0.95rem; 
+}
+
+/* Caixa de Alerta de Erro Customizada e Centralizada */
+.ru-error-alert {
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff5f5;
+  border: 1px solid #fed7d7;
+  color: #c53030;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.ru-error-alert p {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.ru-error-alert small {
+  color: #742a2a;
+}

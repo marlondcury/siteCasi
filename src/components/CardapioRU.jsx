@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/CardapioRU.css';
+
 export default function CardapioRU() {
   const [cardapio, setCardapio] = useState(null);
   const [activeDay, setActiveDay] = useState("segunda");
   const [error, setError] = useState(false);
 
-useEffect(() => {
-    // O '?t=...' evita que o navegador use um JSON antigo guardado em cache
-    fetch('/data/cardapio.json?t=' + new Date().getTime())
+  useEffect(() => {
+    // import.meta.env.BASE_URL garante o caminho correto tanto local quanto no GitHub Pages
+    const baseUrl = import.meta.env.BASE_URL;
+    fetch(`${baseUrl}data/cardapio.json?t=${new Date().getTime()}`)
       .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Erro HTTP: ${res.status} - O ficheiro não foi encontrado.`);
-        }
+        if (!res.ok) throw new Error(`Erro HTTP: ${res.status}`);
         return res.json();
       })
       .then((data) => {
-        console.log("✅ JSON carregado com sucesso:", data);
         setCardapio(data);
         setError(false);
       })
       .catch((err) => {
-        console.error("❌ Falha ao consumir o JSON:", err);
+        console.error("❌ Erro ao carregar cardápio:", err);
         setError(true);
       });
   }, []);
@@ -33,14 +32,15 @@ useEffect(() => {
         <h2>Cardápio do RU Semanal</h2>
         <p className="section-subtitle">Sincronização automatizada para as sedes de Alegre e Jerônimo Monteiro.</p>
 
-        <div className="contact-grid" id="ru-hours">
-          <div className="contact-card">
+        {/* Mudamos a classe para ru-grid para isolar o estilo aqui */}
+        <div className="ru-grid" id="ru-hours">
+          <div className="ru-card">
             <h3>Campus Alegre</h3>
             <p><strong>Café da Manhã:</strong> 06:30 às 07:30</p>
             <p><strong>Almoço:</strong> 11:00 às 13:30</p>
             <p><strong>Jantar:</strong> 17:30 às 19:30</p>
           </div>
-          <div className="contact-card">
+          <div className="ru-card">
             <h3>Campus Jerônimo Monteiro</h3>
             <p><strong>Café da Manhã:</strong> 07:00 às 08:00</p>
             <p><strong>Almoço:</strong> 11:30 às 13:30</p>
@@ -62,8 +62,9 @@ useEffect(() => {
 
         <div className="tab-content">
           {error ? (
-            <div style={{ textAlign: 'center', padding: '2.5rem', color: '#e53e3e' }}>
+            <div className="ru-error-alert">
               <p><strong>⚠️ Não foi possível sincronizar o cardápio desta semana.</strong></p>
+              <small>O site do RU pode estar fora do ar ou o cardápio ainda não foi liberado.</small>
             </div>
           ) : cardapio ? (
             <div dangerouslySetInnerHTML={{ __html: cardapio[activeDay] }} />

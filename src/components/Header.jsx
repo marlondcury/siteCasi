@@ -7,7 +7,7 @@ export default function Header() {
     <header>
       <nav className={`container ${navActive ? 'nav-active' : ''}`}>
         <a href="#home" className="logo">
-          <img src="../assets/images/CORVOLOGO.jpg" alt="Logo Oficial CASI" />
+          <img src="./assets/images/CORVOLOGO.jpg" alt="Logo Oficial CASI" />
         </a>          
         <ul className="nav-links">
           <li><a href="#sobre" onClick={() => setNavActive(false)}>Sobre</a></li>
