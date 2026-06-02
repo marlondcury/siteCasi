@@ -7,7 +7,6 @@ export default function CardapioRU() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    // import.meta.env.BASE_URL garante o caminho correto tanto local quanto no GitHub Pages
     const baseUrl = import.meta.env.BASE_URL;
     fetch(`${baseUrl}data/cardapio.json?t=${new Date().getTime()}`)
       .then((res) => {
@@ -32,7 +31,7 @@ export default function CardapioRU() {
         <h2>Cardápio do RU Semanal</h2>
         <p className="section-subtitle">Sincronização automatizada para as sedes de Alegre e Jerônimo Monteiro.</p>
 
-        {/* Mudamos a classe para ru-grid para isolar o estilo aqui */}
+        {/* Horários Superiores */}
         <div className="ru-grid" id="ru-hours">
           <div className="ru-card">
             <h3>Campus Alegre</h3>
@@ -48,6 +47,7 @@ export default function CardapioRU() {
           </div>
         </div>
         
+        {/* Abas de Dias da Semana */}
         <div className="tabs">
           {days.map((day) => (
             <button 
@@ -60,6 +60,7 @@ export default function CardapioRU() {
           ))}
         </div>
 
+        {/* Conteúdo Dinâmico do Cardápio */}
         <div className="tab-content">
           {error ? (
             <div className="ru-error-alert">
@@ -67,7 +68,8 @@ export default function CardapioRU() {
               <small>O site do RU pode estar fora do ar ou o cardápio ainda não foi liberado.</small>
             </div>
           ) : cardapio ? (
-            <div dangerouslySetInnerHTML={{ __html: cardapio[activeDay] }} />
+            /* Wrapper adicionado aqui para envelopar e forçar o estilo no HTML injetado */
+            <div className="menu-container-wrapper" dangerouslySetInnerHTML={{ __html: cardapio[activeDay] }} />
           ) : (
             <p style={{ textAlign: 'center' }}>Carregando dados sincronizados...</p>
           )}

@@ -1,4 +1,4 @@
-/* Container de Grid próprio do RU para evitar que a tela estoure */
+/* Container de Grid dos Horários (Superior) */
 .ru-grid { 
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -20,6 +20,7 @@
   margin-bottom: 1rem; 
   font-size: 1.25rem; 
   text-align: center;
+  color: var(--text-main);
 }
 
 .ru-card p { 
@@ -27,7 +28,55 @@
   font-size: 0.95rem; 
 }
 
-/* Caixa de Alerta de Erro Customizada e Centralizada */
+/* --- FORMATADOR DO CONTEÚDO DO SCRAPER --- */
+/* Força as divs internas do JSON a se organizarem em colunas idênticas às de cima */
+.menu-container-wrapper .menu-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.menu-container-wrapper .menu-card {
+  background: var(--card-bg) !important;
+  padding: 1.5rem !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--shadow-soft) !important;
+  display: block !important;
+}
+
+.menu-container-wrapper .menu-card h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--secondary-bg);
+  padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.menu-container-wrapper .menu-card p {
+  padding: 6px 0;
+  border-bottom: 1px solid #f7fafc;
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin: 0;
+  text-align: left;
+}
+
+.menu-container-wrapper .menu-card p:last-child {
+  border-bottom: none;
+}
+
+.menu-container-wrapper .menu-card p strong {
+  color: #1a202c;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+/* Caixa de Alerta de Erro */
 .ru-error-alert {
   text-align: center;
   max-width: 600px;
@@ -38,13 +87,4 @@
   color: #c53030;
   border-radius: 8px;
   box-shadow: var(--shadow-soft);
-}
-
-.ru-error-alert p {
-  margin-bottom: 0.25rem;
-  font-size: 1rem;
-}
-
-.ru-error-alert small {
-  color: #742a2a;
 }
