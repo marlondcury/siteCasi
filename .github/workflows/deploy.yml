@@ -1,9 +1,8 @@
-
 name: Deploy para o GitHub Pages
 
 on:
   push:
-    branches: [main, master] # Dispara quando você envia código ou quando o bot do cardápio atualiza a main
+    branches: [main, master]
 
 permissions:
   contents: read
@@ -24,14 +23,17 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: Configurar Node.js (Versão Corrigida)
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20 # <-- Garante o Node 20 para não dar o erro do ReferenceError: File
           cache: 'npm'
 
       - name: Instalar dependências
         run: npm install
+
+      - name: Executar Motor de Raspagem (Scraper)
+        run: npm run scrape
 
       - name: Compilar o projeto React (Build)
         run: npm run build
@@ -42,7 +44,7 @@ jobs:
       - name: Upload do artefato compilado
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Pasta gerada pelo Vite
+          path: './dist'
 
       - name: Deploy final para o GitHub Pages
         id: deployment
